@@ -1,4 +1,4 @@
-//META{"name":"AnimatedStatus","source":"https://raw.githubusercontent.com/toluschr/BetterDiscord-Animated-Status/master/animated-status.plugin.js","website":"https://github.com/toluschr/BetterDiscord-Animated-Status"}*//
+//META{"name":"AnimatedStatus","source":"https://github.com/Arman2122/AnimatedBioDiscord/blob/master/animated-status.plugin.js","website":"https://github.com/Arman2122/AnimatedBioDiscord"}*//
 
 class AnimatedStatus {
 	/* BD functions */
@@ -7,7 +7,7 @@ class AnimatedStatus {
 	}
 
 	getVersion () {
-		return "0.11.0";
+		return "1.0.2";
 	}
 
 	getAuthor () {
@@ -56,7 +56,7 @@ class AnimatedStatus {
 	Status_Animate (index = 0) {
 		if (index >= this.animation.length) index = 0;
 		if (this.animation[index] == undefined) {
-			BdApi.showToast("Animated Status: No status set. Go to Settings>Plugins to set a custom animation!");
+			BdApi.showToast("Animated Status: No status set. Go to Plugins<settings to set a custom animation (Bio ro Set Kn)");
 			return;
 		}
 
@@ -70,7 +70,7 @@ class AnimatedStatus {
 	// Ui related, but special components
 	newRawEdit (str = "") {
 		let out = GUI.newTextarea();
-		out.style.fontFamily = "SourceCodePro,Consolas,Liberation Mono,Menlo,Courier,monospace";
+		out.style.fontFamily = "inja matn khodetono benvisin + inke css ham mitonin";
 		out.placeholder = '"Test (Message)"\n"Test (Message)", "👍 (Symbol)"\n"Test (Message)", "emoji (Nitro Symbol)", "000000000000000000 (Nitro Symbol ID)"\n"eval new String(\'test\') (Javascript)"\n"eval new String(\'test\') (Javascript)", "eval new String(\'👍\') (Javascript)"\n...';
 		out.value = str;
 		return out;
@@ -299,7 +299,7 @@ const Status = {
 	errorString: (code) => {
 		switch (code) {
 			case 401: return "Invalid AuthToken";
-			default: return "Internal Error, report at github.com/toluschr/BetterDiscord-Animated-Status";
+			default: return "Internal Error, report at github.com/Arman2122/AnimatedBioDiscord";
 		}
 	},
 
