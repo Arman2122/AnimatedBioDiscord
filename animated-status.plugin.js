@@ -7,7 +7,7 @@ class AnimatedStatus {
 	}
 
 	getVersion () {
-		return "1.0.2";
+		return "1.0.4";
 	}
 
 	getAuthor () {
@@ -36,13 +36,14 @@ class AnimatedStatus {
 	start () {
 		if (this.animation == undefined || this.timeout == undefined || Status.authToken == undefined) return;
 		this.Status_Animate();
+		this.info();
 	}
 
 	stop () {
 		clearTimeout(this.loop);
 		Status.unset();
 	}
-
+	
 	Status_Eval (string) {
 		try {
 			return ((string.startsWith("eval ")) ? (eval(string.substr(5))) : (string));
@@ -59,6 +60,7 @@ class AnimatedStatus {
 			BdApi.showToast("Animated Status: No status set. Go to Plugins<settings to set a custom animation (Bio ro Set Kn)");
 			return;
 		}
+	
 
 		let results = this.animation[index].map(async (element) => this.Status_Eval(element));
 		Promise.all(results).then(res => {
@@ -66,7 +68,12 @@ class AnimatedStatus {
 			this.loop = setTimeout(() => { this.Status_Animate(index + 1); }, this.timeout);
 		});
 	}
-
+	
+	info () {
+		
+		BdApi.showToast("By : Arman_HC");
+	}
+	
 	// Ui related, but special components
 	newRawEdit (str = "") {
 		let out = GUI.newTextarea();
@@ -149,7 +156,7 @@ class AnimatedStatus {
 		settings.style.padding = "10px";
 
 		// Auth token
-		settings.appendChild(GUI.newLabel("AuthToken (https://discordhelp.net/discord-token)"));
+		settings.appendChild(GUI.newLabel("AuthToken (  amoozeshesho az youtube dar biarid :|  )"));
 		let token = GUI.newInput();
 		token.value = this.getData("token");
 		settings.appendChild(token);
